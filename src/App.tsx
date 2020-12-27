@@ -3,7 +3,7 @@ import QuestionCard from './components/QuestionCard';
 import { FETCH_QUESTIONS } from './API';
 import { Difficulty, QuestionState } from './API';
 
-type AnswerObject = {
+export type AnswerObject = {
 	question: string;
 	answer: string;
 	correct: boolean;
