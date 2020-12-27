@@ -20,9 +20,23 @@ function App() {
 	const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
   
-  console.log(FETCH_QUESTIONS(TOTAL_QUESTIONS, Difficulty.EASY))
+  console.log(questions)
 
-	const startTrivia = async () => {};
+	const startTrivia = async () => {
+    setLoading(true);
+    setGameOver(false);
+
+    const newQuestions = await FETCH_QUESTIONS(
+      TOTAL_QUESTIONS,
+      Difficulty.EASY,
+    )
+    setQuestions(newQuestions);
+    setScore(0);
+    setUserAnswers([]);
+    setNumber(0);
+    setLoading(false);
+    //Add error handling
+  };
 
 	const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {};
 
