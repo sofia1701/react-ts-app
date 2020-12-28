@@ -74,7 +74,7 @@ function App() {
 					Start
 				</button>
 			) : null}
-			{!gameOver && <p>Score: </p>}
+			{!gameOver && <p>Score: {score}</p>}
 			{loading && <p>Loading Questions...</p>}
 			{!loading && !gameOver && (
 				<QuestionCard
